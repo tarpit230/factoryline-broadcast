@@ -34,7 +34,7 @@ tvNamespace.on("connection", (socket) => {
 
 app.use(
   cors({
-    origin: "http://localhost:5173", // React frontend
+    origin: process.env.URL, // React frontend
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true, // if you want to allow cookies/localStorage
