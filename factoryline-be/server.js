@@ -32,29 +32,14 @@ tvNamespace.on("connection", (socket) => {
   });
 });
 
-const allowedOrigins = [
-  "https://factoryline-broadcast-zhrr.vercel.app", 
-  "https://factoryline-broadcast.vercel.app",      
-  "http://localhost:3000"                          
-];
-
 app.use(
   cors({
-    origin: (origin, callback) => {
-      if (!origin || allowedOrigins.includes(origin)) {
-        callback(null, true);
-      } else {
-        callback(new Error("Not allowed by CORS"));
-      }
-    },
+    origin: '*',
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true,
   })
 );
-
-app.options("*", cors());
-
 app.use(express.json());
 
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
