@@ -1,5 +1,10 @@
 # Factory Line Broadcast System
 
+# Login Details
+username - admin
+
+password - admin123
+
 ## Tech Stack
 
 ### Frontend
